@@ -30,7 +30,7 @@ test:
     - pyscipopt
     - pyscipopt.scip
   commands:
-    - python -c 'import pyscipopt.scip; pyscipopt.scip.Model()'
+    - python -c "import pyscipopt.scip; pyscipopt.scip.Model()"
 
 about:
   home: https://github.com/scipopt/PySCIPOpt
