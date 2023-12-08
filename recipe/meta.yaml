@@ -23,7 +23,7 @@ requirements:
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
-    - scip
+    - scip >=8.1, <8.2
     - python
     - pip
   run:
