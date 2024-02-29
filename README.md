@@ -320,5 +320,6 @@ Feedstock Maintainers
 
 * [@AntoinePrv](https://github.com/AntoinePrv/)
 * [@fschloesser](https://github.com/fschloesser/)
+* [@ju-manns](https://github.com/ju-manns/)
 * [@pokutta](https://github.com/pokutta/)
 
