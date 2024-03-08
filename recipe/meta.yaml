@@ -10,8 +10,8 @@ source:
 
 build:
   number: 0
-  script: '"${PYTHON}" -m pip install .'  # [unix]
-  script: '"%PYTHON%"  -m pip install .'  # [win]
+  script: '"${PYTHON}" -m pip install --no-deps .'  # [unix]
+  script: '"%PYTHON%"  -m pip install --no-deps .'  # [win]
 
 requirements:
   build:
@@ -23,6 +23,7 @@ requirements:
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
+    - scip >=9
     - python
     - pip
     - cython >=3
