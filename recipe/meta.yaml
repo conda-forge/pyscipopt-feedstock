@@ -1,4 +1,4 @@
-{% set version = "5.0.1" %}
+{% set version = "5.1.1" %}
 
 package:
   name: pyscipopt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v{{ version }}.tar.gz
-  sha256: 0960a124d2c849e1e822c3bdb2ae0a0b847a9289a1d71e55bfb3b06917f9cf5e
+  sha256: 510875e3d41a06a21b9333921e7d366ec975b607fe9d38ba11c2e4683cb28220
 
 build:
   number: 0
@@ -19,6 +19,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython >=3                              # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
