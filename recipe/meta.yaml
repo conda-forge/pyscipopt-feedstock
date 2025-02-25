@@ -1,4 +1,4 @@
-{% set version = "5.3.0" %}
+{% set version = "5.4.0" %}
 
 package:
   name: pyscipopt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v{{ version }}.tar.gz
-  sha256: 19d7828e1179df2942a7adc1147a26dc74417904350ae365d15e12f63f3c4eb2
+  sha256: d5079e04945c5380f358570454a2a97a9211700eba4032cb2def2abe00ec75c9
 
 build:
   number: 0
