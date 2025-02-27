@@ -30,6 +30,7 @@ requirements:
     - cython >=3
   run:
     - python
+    - numpy >=1.16.0
 
 test:
   imports:
