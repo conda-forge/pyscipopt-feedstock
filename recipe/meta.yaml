@@ -1,4 +1,4 @@
-{% set version = "5.6.0" %}
+{% set version = "5.7.0" %}
 
 package:
   name: pyscipopt
@@ -6,12 +6,15 @@ package:
 
 source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v{{ version }}.tar.gz
-  sha256: 3e618046ead72a6c77e53a4d933682a8ff8432c79c149f8c924d99401aaa5eb4
+  sha256: 5cfa3b4577d424b02f4676cd6f1b9727d07c071c99e725367d380dda5e2f198b
+  patches:
+    - 0001-Fix-variable-name-for-include-directory-in-setup.py.patch
+    - 0001-Fix-list-type.patch
 
 build:
-  number: 1
-  script: '"${PYTHON}" -m pip install --no-deps .'  # [unix]
-  script: '"%PYTHON%"  -m pip install --no-deps .'  # [win]
+  number: 0
+  script: '"${PYTHON}" -m pip install --no-deps --no-build-isolation .'  # [unix]
+  script: '"%PYTHON%"  -m pip install --no-deps --no-build-isolation .'  # [win]
 
 requirements:
   build:
@@ -24,7 +27,7 @@ requirements:
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
-    - scip >=9
+    - scip ==9
     - python
     - pip
     - cython >=3

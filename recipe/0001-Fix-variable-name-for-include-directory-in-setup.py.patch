@@ -1,0 +1,32 @@
+From 823eadfa044b67fbba2093b711a8daecd008d53c Mon Sep 17 00:00:00 2001
+From: Antoine Prouvost <AntoinePrv@users.noreply.github.com>
+Date: Thu, 20 Nov 2025 10:10:38 +0100
+Subject: [PATCH] Fix variable name for include directory in setup.py
+
+See failing Conda-forge builds:
+https://github.com/conda-forge/pyscipopt-feedstock/pull/60
+---
+ setup.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 93a0579..9605ef1 100644
+--- a/setup.py
++++ b/setup.py
+@@ -13,11 +13,11 @@ if not scipoptdir:
+     conda_prefix = os.environ.get("CONDA_PREFIX", "").strip('"')
+ 
+     if conda_prefix and os.path.exists(os.path.join(conda_prefix, "include")):
+-        includedir = os.path.join(conda_prefix, "include")
++        includedirs = os.path.join(conda_prefix, "include")
+         libdir = os.path.join(conda_prefix, "lib")
+         libname = "libscip" if platform.system() == "Windows" else "scip"
+         print(f"Detected conda environment at {conda_prefix}.")
+-        print(f"Using include path {includedir}.")
++        print(f"Using include path {includedirs}.")
+         print(f"Using library directory {libdir}.\n")
+     else:
+         # fall back to global installation
+-- 
+2.52.0
+
