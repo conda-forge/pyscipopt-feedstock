@@ -9,6 +9,7 @@ source:
   sha256: 5cfa3b4577d424b02f4676cd6f1b9727d07c071c99e725367d380dda5e2f198b
   patches:
     - 0001-Fix-variable-name-for-include-directory-in-setup.py.patch
+    - 0001-Fix-list-type.patch
 
 build:
   number: 0
