@@ -8,7 +8,6 @@ source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v{{ version }}.tar.gz
   sha256: 3a9fb93d6a3733c027b170ec4c8d3f393462c5c22cd86337b09acbf460f4ac30
   patches:
-    - 0001-Fix-variable-name-for-include-directory-in-setup.py.patch
     - 0001-Fix-list-type.patch
 
 build:
@@ -27,7 +26,7 @@ requirements:
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
-    - scip ==9
+    - scip ==10
     - python
     - pip
     - cython >=3
