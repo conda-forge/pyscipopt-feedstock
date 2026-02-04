@@ -1,4 +1,4 @@
-{% set version = "5.7.1" %}
+{% set version = "6.0.0" %}
 
 package:
   name: pyscipopt
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v{{ version }}.tar.gz
-  sha256: 88c52281c1e3ff501ef9ed782e7b3f160dd113386354f555b8e43d913cc0f633
+  sha256: 3a9fb93d6a3733c027b170ec4c8d3f393462c5c22cd86337b09acbf460f4ac30
   patches:
     - 0001-Fix-variable-name-for-include-directory-in-setup.py.patch
     - 0001-Fix-list-type.patch
