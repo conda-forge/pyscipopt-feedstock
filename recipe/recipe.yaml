@@ -10,8 +10,6 @@ package:
 source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v${{ version }}.tar.gz
   sha256: 8c4541fcd126ac31a6e2166de93b8fd837f73af54e640d3b4a2dad3818002ce3
-  patches:
-    - 0001-Fix-list-type.patch
 
 build:
   number: 0
@@ -25,6 +23,7 @@ requirements:
         - python
         - cross-python_${{ target_platform }}
         - cython >=3
+        - numpy
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
@@ -33,6 +32,7 @@ requirements:
     - python
     - pip
     - cython >=3
+    - numpy
     - setuptools
   run:
     - python
