@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  version: 6.0.0
+
+package:
+  name: pyscipopt
+  version: ${{ version }}
+
+source:
+  url: https://github.com/scipopt/PySCIPOpt/archive/v${{ version }}.tar.gz
+  sha256: 3a9fb93d6a3733c027b170ec4c8d3f393462c5c22cd86337b09acbf460f4ac30
+  patches:
+    - 0001-Fix-list-type.patch
+
+build:
+  number: 1
+  script: >-
+    "${{ PYTHON }}" -m pip install --no-deps --no-build-isolation .
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython >=3
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+  host:
+    - scip ==10
+    - python
+    - pip
+    - cython >=3
+    - setuptools
+  run:
+    - python
+    - numpy >=1.16.0
+
+tests:
+  - python:
+      imports:
+        - pyscipopt
+        - pyscipopt.scip
+  - script:
+      - python -c "import pyscipopt.scip; pyscipopt.scip.Model()"
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Interface from Python to the SCIP Optimization Suite
+  homepage: https://github.com/scipopt/PySCIPOpt
+  documentation: https://scipopt.github.io/PySCIPOpt/docs/html/
+
+extra:
+  recipe-maintainers:
+    - ju-manns
+    - AntoinePrv
+    - pokutta
+    - fschloesser
