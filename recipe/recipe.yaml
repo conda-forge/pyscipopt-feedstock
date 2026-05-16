@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "6.2.0"
+  version: "6.2.1"
 
 package:
   name: pyscipopt
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/scipopt/PySCIPOpt/archive/v${{ version }}.tar.gz
-  sha256: 279d232893c1af77dc7ac89616a3a9471df6ddcadd5699d2d011d6dbe61e9de2
+  sha256: 9c511bd3dc6767f08c430c3be18af9e900d5bc939d9d1b44379dd0f760da167e
 
 build:
   number: 0
