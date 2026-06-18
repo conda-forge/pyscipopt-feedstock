@@ -301,4 +301,5 @@ Feedstock Maintainers
 * [@fschloesser](https://github.com/fschloesser/)
 * [@ju-manns](https://github.com/ju-manns/)
 * [@pokutta](https://github.com/pokutta/)
+* [@scip-ci](https://github.com/scip-ci/)
 
