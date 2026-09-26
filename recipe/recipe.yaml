@@ -55,6 +55,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - scip-ci
     - ju-manns
     - AntoinePrv
     - pokutta
